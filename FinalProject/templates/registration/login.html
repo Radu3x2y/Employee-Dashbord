@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+    <div class="container-fluid d-flex justify-content-center align-items-center" style="height: 100vh;">
+        <div class="col-md-6 col-lg-4">
+            <div class="card login-card">
+                <div class="card-header login-card-header">
+                    <h3 class="text-center login-h3">Login</h3>
+                </div>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="card-body login-card-body">
+                        <div class="form-group">
+                            {{ form.username.label_tag }}
+                            {{ form.username }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.password.label_tag }}
+                            {{ form.password }}
+                        </div>
+                        <div class="form-group d-flex justify-content-between align-items-center">
+                            <div class="form-check">
+                                {{ form.remember_me }}
+                                <label class="form-check-label" for="{{ form.remember_me.id_for_label }}">Remember Me</label>
+                            </div>
+                            <div class="div-forgot-password">
+                                <a href="#" class="a-forgot-password">Forgot Password</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer text-center login-card-footer">
+                        <button type="submit" class="btn btn-outline-success login-btn">Sign In</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

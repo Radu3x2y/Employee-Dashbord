@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %} Profile {% endblock %}
+
+{% block content %}
+    <div class="container rounded bg-white mt-5 mb-5">
+        <div class="row">
+            <div class="col-md-3 border-right">
+                <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                    <img src="{{ user.employee.profile_picture.url }}" alt="Profile Picture"
+                         class="profile-picture me-2 profile-profile-picture"
+                         onerror="this.onerror=null;this.src='{% static 'images/avatar.png' %}';">
+                    <span class="font-weight-bold">{{ employee.first_name }} {{ employee.last_name }}</span>
+                    <span class="text-black-50">{{ employee.email }}</span>
+                </div>
+            </div>
+            <div class="col-md-9 border-right">
+                <div class="p-3 py-5">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4 class="text-right">Profile Details</h4>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-6">
+                            <p><strong>First Name:</strong> {{ employee.first_name }}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong>Last Name:</strong> {{ employee.last_name }}</p>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <p><strong>Age:</strong> {{ employee.age }}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong>Gender:</strong> {{ employee.get_gender_display }}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong>Date of Birth:</strong> {{ employee.date_of_birth }}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong>Phone:</strong> {{ employee.phone }}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong>Department:</strong> {{ employee.get_department_display }}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong>Position:</strong> {{ employee.position }}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong>Start Date:</strong> {{ employee.start_date }}</p>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12">
+                            <p><strong>Address:</strong> {{ employee.address }}</p>
+                        </div>
+                        <div class="col-md-12">
+                            <p><strong>Email ID:</strong> {{ employee.email }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

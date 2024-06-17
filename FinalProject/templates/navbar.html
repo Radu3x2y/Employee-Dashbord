@@ -1,0 +1,52 @@
+{% load static %}
+{% if user.is_authenticated %}
+    <nav class="navbar navbar-dark bg-transparent fixed-top">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center" style="width: 48px;">
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasDarkNavbar"
+                        aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <h3 class="navbar-brand m-0 text-center flex-grow-1">
+                <img src="{% static 'images/logo.png' %}" alt="Logo" height="40">
+            </h3>
+            <div style="width: 48px;"></div>
+        </div>
+        <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+             aria-labelledby="offcanvasDarkNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">
+                    Welcome, {{ employee.first_name }} {{ employee.last_name }}</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body d-flex flex-column">
+                <ul class="navbar-nav mb-auto pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href='{% url 'dashboard' %}'>Overview</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Documents</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'create-user' %}">Create a new user</a>
+                    </li>
+                </ul>
+                <form method="post" action="{% url 'logout' %}" class="mt-auto">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-outline-secondary">
+                        Logout
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+{% endif %}

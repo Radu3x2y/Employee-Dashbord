@@ -1,0 +1,250 @@
+/* Large Screen */
+@media (min-width: 534px) {
+    .col-lg-4 {
+        flex: 0 0 30%;
+        min-width: 500px;
+    }
+
+    .div-forgot-password {
+        justify-content: flex-end;
+        margin-top: 0;
+    }
+}
+
+/* Small Screen */
+@media (max-width: 534px) {
+    .col-lg-4 {
+        flex: 0 0 98%;
+        max-width: 98%;
+    }
+
+    .div-forgot-password {
+        justify-content: center;
+        margin-top: 10px;
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background: url('../images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/*Login styling*/
+
+.login-card-header {
+    background-color: transparent;
+    border: 1px transparent;
+}
+
+.login-h3 {
+    color: darkorange;
+    font-size: 35px;
+}
+
+.login-card {
+    background-color: transparent;
+    border: 1px;
+    border-radius: 5px;
+    padding: 8px 12px;
+    color: #fff;
+}
+
+.login-card-body .form-control {
+    height: 50px;
+    color: white;
+    border: 1px solid transparent;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    transition: all 0.3s ease;
+}
+
+.login-card-body .form-control:hover,
+.login-card-body .form-control:focus {
+    background: transparent;
+    box-shadow: none;
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.login-card-body .form-control::placeholder {
+    font-size: 20px;
+    color: #fff;
+}
+
+.login-btn {
+    height: 50px;
+    color: white;
+    border: 1px solid transparent;
+    background: darkorange;
+    border-radius: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    width: 100%;
+    font-size: 20px;
+    margin-top: -15px;
+}
+
+.login-card-footer {
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+
+/*Checkbox Styling*/
+
+.form-check .form-check-input {
+    float: left;
+    margin-left: -20px;
+}
+
+.form-check-input {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: 500;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-top: 16px;
+}
+
+.form-check-input:not(:checked) {
+    opacity: 0.12;
+    border: 1px solid transparent;
+}
+
+.form-check-input:checked {
+    color: darkorange;
+    background-color: darkorange;
+    border: 1px solid transparent;
+}
+
+.form-check-input:checked::before {
+    background-color: transparent;
+    border-color: darkorange;
+    opacity: 0;
+}
+
+.form-check-label {
+    color: darkorange;
+    margin-top: 10px;
+    font-size: 20px;
+    padding-left: 5px;
+}
+
+
+.form-check-input:focus {
+    box-shadow: none;
+    outline: none;
+    border-color: darkorange;
+}
+
+/*Forgot Password Styling*/
+
+.div-forgot-password {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.a-forgot-password {
+    color: darkorange;
+    font-size: 20px;
+    text-decoration: none;
+    margin-right: 8px;
+}
+
+.a-forgot-password:hover {
+    color: white;
+}
+
+
+/*Sidebar Styling*/
+
+.sidebar {
+    color: black;
+    background-color: #343a40;;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 250px;
+    z-index: 1;
+}
+
+.welcome-container {
+    display: flex;
+    justify-content: center;
+}
+
+.welcome-text {
+    text-align: center;
+    width: 100%;
+}
+
+.sidebar-profile-picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.sidebar .logout-div {
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+}
+
+.sidebar .logout-button {
+    width: 90%;
+}
+
+.nav-link {
+    color: white;
+    position: relative;
+    padding: 10px 15px;
+}
+
+.nav-link i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+.nav-link span {
+    margin-left: 35px;
+    font-size: 20px;
+}
+
+.nav-link:hover {
+    color: darkorange !important;
+}
+
+.nav-item.active {
+    color: darkorange !important;
+}
+
+.nav-item.active a {
+    color: darkorange !important;
+}
+
+/*Profile Styling*/
+
+.profile-profile-picture{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
